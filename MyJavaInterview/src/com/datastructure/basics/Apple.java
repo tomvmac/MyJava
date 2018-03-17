@@ -1,7 +1,5 @@
-package com.datastructures.sort.com.datastructure.basics;
+package com.datastructure.basics;
 
-
-import com.datastructures.sort.com.players.PlayerInfo;
 
 import java.util.Objects;
 

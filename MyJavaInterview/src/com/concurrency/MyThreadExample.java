@@ -1,34 +1,32 @@
-package com.datastructures.sort.com.concurrency;
+package com.concurrency;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class NonThreadExample {
+public class MyThreadExample {
 
     public static void main(String[] args) {
+
 
         System.out.println("Start Time: ");
         Date startTime = new Date();
         System.out.println(startTime.getTime());
 
-        for (int i = 1; i <= 100000001; i++) {
-            if (i == 1000001) {
-                System.out.print("First counter " + i);
-            }
-        }
+        Thread thread1 = new Thread(new MyThread());
+        thread1.start();
 
-        for (int i = 1; i <= 100000001; i++) {
-            if (i == 1000001) {
-                System.out.print("Second counter " + i);
-            }
-        }
+        Thread thread2 = new Thread(new MyThread());
+        thread2.start();
 
-        for (int i = 1; i <= 100000001; i++) {
-            if (i == 1000001) {
-                System.out.print("Main Thread counter " + i);
-            }
-        }
+        Thread thread3 = new Thread(new MyThread());
+        thread3.start();
+
+//        for (int i = 1; i <= 100000001; i++) {
+//            if (i == 1000000) {
+//                System.out.print("Main Thread counter " + i);
+//            }
+//        }
 
         System.out.println("-----");
         System.out.println("End Time: ");
@@ -38,6 +36,7 @@ public class NonThreadExample {
         long elapseTime = endTime.getTime() - startTime.getTime();
 
         System.out.println("elapse time in milli secs " + elapseTime);
+
     }
 
     public static void displayCurrentTime(){

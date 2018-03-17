@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.algorithm.questions;
+package com.algorithm.questions;
 
 import java.util.ArrayList;
 public class TitleCaseProblem {

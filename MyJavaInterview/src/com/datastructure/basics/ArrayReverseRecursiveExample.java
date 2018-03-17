@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.datastructure.basics;
+package com.datastructure.basics;
 
 public class ArrayReverseRecursiveExample {
 

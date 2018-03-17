@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.players;
+package com.players;
 
 public class PlayerInfo {
 

@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.players;
+package com.players;
 
 import java.util.Comparator;
 

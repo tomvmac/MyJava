@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.datastructure.basics;
+package com.datastructure.basics;
 
 import java.util.Arrays;
 import java.util.Collections;

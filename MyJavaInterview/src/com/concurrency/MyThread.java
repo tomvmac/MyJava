@@ -1,4 +1,4 @@
-package com.datastructures.sort.com.concurrency;
+package com.concurrency;
 
 public class MyThread implements Runnable {
 
