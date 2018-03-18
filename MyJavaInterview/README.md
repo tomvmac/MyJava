@@ -20,3 +20,5 @@ https://www.toptal.com/developers/sorting-algorithms/insertion-sort
 https://www.javaworld.com/article/3215112/learn-java/java-101-datastructures-and-algorithms-in-java-part-1.html
 
 https://github.com/TheAlgorithms/Java
+
+https://www.javatpoint.com/synchronization-in-java
