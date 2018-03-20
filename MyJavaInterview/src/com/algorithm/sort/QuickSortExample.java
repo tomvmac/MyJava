@@ -1,4 +1,4 @@
-package com.datastructures.sort;
+package com.algorithm.sort;
 
 public class QuickSortExample {
 
