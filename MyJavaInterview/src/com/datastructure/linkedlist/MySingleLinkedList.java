@@ -2,6 +2,10 @@ package com.datastructure.linkedlist;
 
 import java.util.Hashtable;
 
+
+/**
+ * Merge Sort was from https://www.geeksforgeeks.org/merge-sort-for-linked-list/
+ */
 public class MySingleLinkedList {
 
     private SingleLinkedListNode head;
@@ -114,7 +118,79 @@ public class MySingleLinkedList {
             tmp = tmp.getNextRef();
         }
 
+    }
 
+    // Utility function to get the middle of the linked list
+    private SingleLinkedListNode getMiddle(SingleLinkedListNode headNode){
+        //Base case
+        if (headNode == null)
+            return headNode;
+        SingleLinkedListNode fastptr = headNode.getNextRef();
+        SingleLinkedListNode slowptr = headNode;
+
+        // Move fastptr by two and slow ptr by one
+        // Finally slowptr will point to middle node
+        while (fastptr != null)
+        {
+            fastptr = fastptr.getNextRef();
+            if(fastptr!=null)
+            {
+                slowptr = slowptr.getNextRef();
+                fastptr=fastptr.getNextRef();
+            }
+        }
+        return slowptr;
+    }
+
+
+    public SingleLinkedListNode mergeSort(SingleLinkedListNode headNode)
+    {
+        // Base case : if head is null
+        if (headNode == null || headNode.getNextRef() == null)
+        {
+            return headNode;
+        }
+
+        // get the middle of the list
+        SingleLinkedListNode middle = getMiddle(headNode);
+        SingleLinkedListNode nextofmiddle = middle.getNextRef();
+
+        // set the next of middle node to null
+        middle.setNextRef(null);
+
+        // Apply mergeSort on left list
+        SingleLinkedListNode left = mergeSort(headNode);
+
+        // Apply mergeSort on right list
+        SingleLinkedListNode right = mergeSort(nextofmiddle);
+
+        // Merge the left and right lists
+        SingleLinkedListNode sortedlist = sortedMerge(left, right);
+        return sortedlist;
+    }
+
+
+    private SingleLinkedListNode sortedMerge(SingleLinkedListNode a, SingleLinkedListNode b)
+    {
+        SingleLinkedListNode result = null;
+        /* Base cases */
+        if (a == null)
+            return b;
+        if (b == null)
+            return a;
+
+        /* Pick either a or b, and recur */
+        if (a.getData() <= b.getData())
+        {
+            result = a;
+            result.setNextRef(sortedMerge(a.getNextRef(), b));
+        }
+        else
+        {
+            result = b;
+            result.setNextRef(sortedMerge(a, b.getNextRef()));
+        }
+        return result;
 
     }
 

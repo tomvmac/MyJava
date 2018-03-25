@@ -29,12 +29,20 @@ public class PlayerExample {
 //        }
 
         // Sort list by age
-        Collections.sort(playerInfoList, new Comparator<PlayerInfo>() {
-            @Override
-            public int compare(PlayerInfo o1, PlayerInfo o2) {
-                return o1.getAge() - o2.getAge();
-            }
-        });
+//        Collections.sort(playerInfoList, new Comparator<PlayerInfo>() {
+//            @Override
+//            public int compare(PlayerInfo o1, PlayerInfo o2) {
+//                return o1.getAge() - o2.getAge();
+//            }
+//        });
+
+        // Ascending Order
+        Collections.sort(playerInfoList, new PlayerAgeComparator());
+
+
+
+        // Reverse Order
+        //Collections.sort(playerInfoList, Collections.reverseOrder(new PlayerAgeComparator()));
 
         // display all players
         for (PlayerInfo playerInfo: playerInfoList){
@@ -49,7 +57,11 @@ public class PlayerExample {
         boolean kobeOnList = playerInfoList.contains(kobePlayerInfo);
         boolean larryOnList = playerInfoList.contains(larryPlayerInfo);
 
-        System.out.println("");
+        System.out.println("Max age = " + ((PlayerInfo) Collections.max(playerInfoList, new PlayerAgeComparator())).getAge());
+
+
+        // max age
+
 
     }
 }
